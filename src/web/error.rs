@@ -136,6 +136,7 @@ struct ErrorInfo {
     pub title: &'static str,
     // The error message, displayed as a description
     pub message: Cow<'static, str>,
+    // The status code of the response
     pub status: StatusCode,
 }
 
