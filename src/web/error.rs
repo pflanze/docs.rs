@@ -39,9 +39,9 @@ pub enum AxumNope {
 }
 
 // FUTURE: Ideally, the split between the 3 kinds of responses would
-// be done by having 3 kinds of enums in the first place instead of
-// just `AxumNope`, to keep the line statically type-checked
-// throughout instead of having the conversion?
+// be done by having multiple nested enums in the first place instead
+// of just `AxumNope`, to keep everything statically type-checked
+// throughout instead of having the potential for a runtime error.
 
 impl AxumNope {
     fn into_error_response(self) -> ErrorResponse {
