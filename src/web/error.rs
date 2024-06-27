@@ -119,7 +119,7 @@ struct ErrorInfo {
 }
 
 fn redirect_with_policy(target: String, cache_policy: CachePolicy) -> AxumResponse {
-    match super::axum_cached_redirect(&encode_url_path(&target), cache_policy) {
+    match super::axum_cached_redirect(encode_url_path(&target), cache_policy) {
         Ok(response) => response.into_response(),
         Err(err) => AxumNope::InternalError(err).into_response(),
     }
